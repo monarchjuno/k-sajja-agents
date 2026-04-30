@@ -53,43 +53,44 @@
 
 | 직업 패키지 | 다룰 수 있는 업무 |
 | --- | --- |
-| `patent-attorney/` | 특허 명세서 검토, 선행기술 조사, 의견제출통지 대응 초안 |
-| `lawyer/` | 계약서 검토, 조항 요약, 리스크 체크, 법령 기반 질의응답 |
-| `tax-accountant/` | 비용 정리, 증빙 분류, 세무 체크리스트, 신고 자료 검토 |
-| `doctor/` | 증상 정리, 진료 전 문진 준비, 검사 결과 질문 목록 작성 |
-| `pharmacist/` | 복약 상담 준비, 의약품 정보 정리, 병용 주의사항 체크 |
-| `certified-labor-attorney/` | 근로계약, 임금, 해고, 직장 내 괴롭힘 관련 체크리스트 |
-| `real-estate-agent/` | 매물 비교, 전월세 조건 검토, 특약 체크, 실거래가 리서치 |
-| `appraiser/` | 감정평가 자료 정리, 비교 사례 검토, 평가 질문 목록 작성 |
-| `customs-broker/` | 수출입 서류 체크, HS 코드 검토, 통관 절차 안내 |
-| `judicial-scrivener/` | 등기, 법인 설립, 상속 관련 서류 준비 체크리스트 |
+| `agents/patent-attorney/` | 특허 명세서 검토, 선행기술 조사, 의견제출통지 대응 초안 |
+| `agents/lawyer/` | 계약서 검토, 조항 요약, 리스크 체크, 법령 기반 질의응답 |
+| `agents/tax-accountant/` | 비용 정리, 증빙 분류, 세무 체크리스트, 신고 자료 검토 |
+| `agents/doctor/` | 증상 정리, 진료 전 문진 준비, 검사 결과 질문 목록 작성 |
+| `agents/pharmacist/` | 복약 상담 준비, 의약품 정보 정리, 병용 주의사항 체크 |
+| `agents/certified-labor-attorney/` | 근로계약, 임금, 해고, 직장 내 괴롭힘 관련 체크리스트 |
+| `agents/real-estate-agent/` | 매물 비교, 전월세 조건 검토, 특약 체크, 실거래가 리서치 |
+| `agents/appraiser/` | 감정평가 자료 정리, 비교 사례 검토, 평가 질문 목록 작성 |
+| `agents/customs-broker/` | 수출입 서류 체크, HS 코드 검토, 통관 절차 안내 |
+| `agents/judicial-scrivener/` | 등기, 법인 설립, 상속 관련 서류 준비 체크리스트 |
 
 ## 디렉토리 규칙
 
-루트 디렉토리에는 직업 이름을 둡니다. 각 직업 디렉토리 안에는 기여자 이름 또는 업체명을 영문 슬러그로 만든 기여자 디렉토리를 둡니다. 각 기여자 디렉토리 안에 해당 기여자가 만든 스킬 디렉토리를 둡니다.
+루트에는 레포 운영 파일과 메타 스킬을 두고, 실제 직업별 에이전트 스킬은 `agents/` 아래에 둡니다. `agents/` 아래에는 직업 이름을 둡니다. 각 직업 디렉토리 안에는 기여자 이름 또는 업체명을 영문 슬러그로 만든 기여자 디렉토리를 둡니다. 각 기여자 디렉토리 안에 해당 기여자가 만든 스킬 디렉토리를 둡니다.
 
 ```text
-lawyer/
-├── .gitkeep
-├── hong-gildong/
-│   ├── PROFILE.md
-│   └── lawyer-contract-review/
-│       └── SKILL.md
-└── startup-law-lab/
-    └── lawyer-legal-summary/
-        └── SKILL.md
+agents/
+└── lawyer/
+    ├── .gitkeep
+    ├── hong-gildong/
+    │   ├── PROFILE.md
+    │   └── lawyer-contract-review/
+    │       └── SKILL.md
+    └── startup-law-lab/
+        └── lawyer-legal-summary/
+            └── SKILL.md
 ```
 
-기본 경로는 `직업명/기여자-slug/직업명-스킬이름/SKILL.md` 형식을 사용합니다. 기여자 슬러그는 작성자 이름, 사무소명, 병원명, 업체명 등을 소문자 영문, 숫자, 하이픈(`-`)으로 정규화합니다.
+기본 경로는 `agents/직업명/기여자-slug/직업명-스킬이름/SKILL.md` 형식을 사용합니다. 기여자 슬러그는 작성자 이름, 사무소명, 병원명, 업체명 등을 소문자 영문, 숫자, 하이픈(`-`)으로 정규화합니다.
 
 ```text
-lawyer/hong-gildong/lawyer-contract-review/SKILL.md
-tax-accountant/kim-tax-office/tax-accountant-vat-check/SKILL.md
-patent-attorney/ip-seoul/patent-attorney-prior-art-search/SKILL.md
-real-estate-agent/gangnam-home/real-estate-agent-lease-check/SKILL.md
+agents/lawyer/hong-gildong/lawyer-contract-review/SKILL.md
+agents/tax-accountant/kim-tax-office/tax-accountant-vat-check/SKILL.md
+agents/patent-attorney/ip-seoul/patent-attorney-prior-art-search/SKILL.md
+agents/real-estate-agent/gangnam-home/real-estate-agent-lease-check/SKILL.md
 ```
 
-직업 디렉토리에는 기여자 디렉토리와 빈 디렉토리 유지를 위한 `.gitkeep`만 둡니다. 기여자 디렉토리에는 선택적으로 `PROFILE.md`를 둘 수 있습니다. 같은 기여자가 여러 스킬을 만들 때 반복되는 전문가 소개, 업체 정보, 연락처, 상담 안내를 공통으로 관리하기 위한 파일입니다. 개별 스킬에도 필요한 범위에서 전문가 프로필과 연락처를 다시 적을 수 있습니다.
+`agents/` 바로 아래에는 직업 디렉토리만 둡니다. 직업 디렉토리에는 기여자 디렉토리와 빈 디렉토리 유지를 위한 `.gitkeep`만 둡니다. 기여자 디렉토리에는 선택적으로 `PROFILE.md`를 둘 수 있습니다. 같은 기여자가 여러 스킬을 만들 때 반복되는 전문가 소개, 업체 정보, 연락처, 상담 안내를 공통으로 관리하기 위한 파일입니다. 개별 스킬에도 필요한 범위에서 전문가 프로필과 연락처를 다시 적을 수 있습니다.
 
 스킬이 외부 자료, 공개 문서, 오픈소스 코드를 참고했다면 `SKILL.md` 안에 출처와 라이선스를 함께 기록합니다.
 
@@ -98,7 +99,7 @@ real-estate-agent/gangnam-home/real-estate-agent-lease-check/SKILL.md
 ## 기여 방식
 
 1. 추가할 직업 패키지를 정합니다.
-2. 직업 디렉토리 안에 본인 또는 업체의 기여자 슬러그 디렉토리를 만듭니다.
+2. `agents/직업명/` 안에 본인 또는 업체의 기여자 슬러그 디렉토리를 만듭니다.
 3. 기여자 디렉토리 안에 `직업명-스킬이름` 형식의 스킬 디렉토리를 만듭니다.
 4. `SKILL.md`에는 작업 절차, 입력 예시, 출력 형식, 제한사항을 한국어로 작성합니다.
 5. 같은 기여자의 공통 소개가 필요하면 기여자 디렉토리에 `PROFILE.md`를 추가합니다.
@@ -117,7 +118,7 @@ real-estate-agent/gangnam-home/real-estate-agent-lease-check/SKILL.md
 예시:
 
 ```text
-# lawyer/hong-gildong/PROFILE.md
+# agents/lawyer/hong-gildong/PROFILE.md
 
 ## 전문가 연결
 

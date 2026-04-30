@@ -55,17 +55,18 @@ description: 한국 전문직 기여자와 문답하며 k-sajja-agents 레포지
 
 ## Anatomy of a Sajja Skill
 
-각 직업 스킬은 직업 디렉토리 아래의 기여자 디렉토리 안에 둔다. 기여자 디렉토리는 작성자 이름, 사무소명, 병원명, 업체명 등을 영문 슬러그로 만든다.
+각 직업 스킬은 `agents/` 아래의 직업 디렉토리, 그 아래의 기여자 디렉토리 안에 둔다. 기여자 디렉토리는 작성자 이름, 사무소명, 병원명, 업체명 등을 영문 슬러그로 만든다.
 
 ```text
-lawyer/
-└── hong-gildong/
-    ├── PROFILE.md    # 선택
-    └── lawyer-contract-review/
-        ├── SKILL.md
-        ├── references/   # 선택
-        ├── scripts/      # 선택
-        └── assets/       # 선택
+agents/
+└── lawyer/
+    └── hong-gildong/
+        ├── PROFILE.md    # 선택
+        └── lawyer-contract-review/
+            ├── SKILL.md
+            ├── references/   # 선택
+            ├── scripts/      # 선택
+            └── assets/       # 선택
 ```
 
 ### SKILL.md
@@ -160,14 +161,14 @@ lawyer/
 - 기여자 디렉토리에는 선택적으로 `PROFILE.md`를 둘 수 있다.
 - 스킬 디렉토리 이름은 `직업명-스킬이름` 형식을 사용한다.
 - 이름은 소문자, 숫자, 하이픈만 사용한다.
-- 권장 경로는 `직업패키지/기여자-slug/직업명-스킬이름/SKILL.md`로 제안한다.
+- 권장 경로는 `agents/직업패키지/기여자-slug/직업명-스킬이름/SKILL.md`로 제안한다.
 
 예시:
 
 ```text
-lawyer/hong-gildong/lawyer-contract-review/SKILL.md
-doctor/seoul-pain-clinic/doctor-pre-visit-summary/SKILL.md
-patent-attorney/ip-seoul/patent-attorney-prior-art-search/SKILL.md
+agents/lawyer/hong-gildong/lawyer-contract-review/SKILL.md
+agents/doctor/seoul-pain-clinic/doctor-pre-visit-summary/SKILL.md
+agents/patent-attorney/ip-seoul/patent-attorney-prior-art-search/SKILL.md
 ```
 
 ### Step 4. Draft or Update the Skill
@@ -226,7 +227,7 @@ description: 이 스킬이 수행하는 업무와 사용해야 하는 상황을 
 
 초안이 완성되면 다음을 점검한다.
 
-- 경로가 `직업명/기여자-slug/직업명-스킬이름/SKILL.md` 형식인가
+- 경로가 `agents/직업명/기여자-slug/직업명-스킬이름/SKILL.md` 형식인가
 - 기여자 슬러그가 소문자 영문, 숫자, 하이픈으로 정규화되어 있는가
 - 스킬 디렉토리명이 `직업명-스킬이름` 형식인가
 - frontmatter에 `name`, `description`만 있는가
@@ -294,7 +295,7 @@ PR 설명에 포함할 항목:
 
 ```text
 권장 경로:
-직업패키지/기여자-slug/직업명-스킬이름/SKILL.md
+agents/직업패키지/기여자-slug/직업명-스킬이름/SKILL.md
 
 기여자 프로필 계획:
 - PROFILE.md 사용 / 개별 SKILL.md에만 기재 / 프로필 생략
